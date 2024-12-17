@@ -22,13 +22,14 @@ final class CalendarHandler {
     
     func monthString(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "LLL" // full month name
-        return dateFormatter.string(from: date)
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        dateFormatter.dateFormat = "LLL"
+        return dateFormatter.string(from: date).capitalized
     }
     
     func yearString(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy" // full month name
+        dateFormatter.dateFormat = "yyyy"
         return dateFormatter.string(from: date)
     }
     
@@ -49,7 +50,11 @@ final class CalendarHandler {
     
     func weekDay(date: Date) -> Int {
         let components = calendar.dateComponents([.weekday], from: date)
-        return components.weekday! - 1
+        var weekday = components.weekday! - 2
+        if weekday < 0 {
+            weekday = 6
+        }
+        return weekday
     }
     
 }
