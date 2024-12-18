@@ -11,15 +11,19 @@ final class MainViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     var selectedDate = Date()
     var totalDaysInCalendar = [String]()
     var selectedDay: Int?      // Tracks which day user has selected
     var currentDate = Date()   // Stores the actual current date for reference
+    var timeSlots: [String] = [] // Array to store time slots
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupTimeSlots()
+        tableView.register(TaskTableViewCell.nib(), forCellReuseIdentifier: TaskTableViewCell.identifier)
     }
     
     @IBAction func nextMonth(_ sender: Any) {
@@ -42,6 +46,7 @@ extension MainViewController {
     
     func setupUI() {
         setupCells()
+        setupTableView()
         // Initialize calendar with current date selected
         selectedDate = currentDate
         selectedDay = CalendarHandler().dayOfMonth(date: currentDate)
@@ -55,6 +60,22 @@ extension MainViewController {
         
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: height)
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        // Register a cell if you're using a custom cell class
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "TimeSlotCell")
+    }
+    
+    func setupTimeSlots() {
+        timeSlots.removeAll()
+        for hour in 0..<24 {
+            let startHour = String(format: "%02d:00", hour)
+            let endHour = String(format: "%02d:00", (hour + 1) % 24)
+            timeSlots.append("\(startHour)-\(endHour)")
+        }
     }
     
     func setMonthView() {
@@ -80,11 +101,13 @@ extension MainViewController {
             .yearString(date: selectedDate)
         
         collectionView.reloadData()
+        tableView.reloadData()
     }
 }
 
 // MARK: - UICollction view setup
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     // MARK: - DataSource part
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         totalDaysInCalendar.count
@@ -103,21 +126,21 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.layer.cornerRadius = cell.frame.width / 2
         cell.clipsToBounds = true
         
-        // Highlight current day if we're viewing the current month and year
+        // highlight current day if we're viewing the current month and year
         if let day = Int(totalDaysInCalendar[indexPath.item]),
            CalendarHandler().monthString(date: selectedDate) == CalendarHandler().monthString(date: currentDate),
            CalendarHandler().yearString(date: selectedDate) == CalendarHandler().yearString(date: currentDate),
            day == CalendarHandler().dayOfMonth(date: currentDate) {
-            // Current day is highlighted in blue
+            // current day highlight
             cell.backgroundColor = .systemBlue
             cell.dayOfMonthLabel.textColor = .white
         }
         
-        // Highlight user selected day
+        // highlight other selected day
         if let selectedDay = selectedDay,
            let day = Int(totalDaysInCalendar[indexPath.item]),
            day == selectedDay {
-            // Selected day is highlighted in green
+            // selected day highlight
             cell.backgroundColor = .systemGreen
             cell.dayOfMonthLabel.textColor = .white
         }
@@ -131,5 +154,24 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             selectedDay = day
             collectionView.reloadData()
         }
+    }
+}
+
+// MARK: - UITableView Setup
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return timeSlots.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+//        cell.textLabel?.text = timeSlots[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44 // Standard cell height
     }
 }

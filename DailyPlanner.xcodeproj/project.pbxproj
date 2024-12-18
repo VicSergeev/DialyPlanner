@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57E30EFE2D120BFD00254FD5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 57E30EFD2D120BFD00254FD5 /* Realm */; };
 		57E30F002D120BFD00254FD5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 57E30EFF2D120BFD00254FD5 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +41,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				57E30F002D120BFD00254FD5 /* RealmSwift in Frameworks */,
-				57E30EFE2D120BFD00254FD5 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +83,6 @@
 			);
 			name = DailyPlanner;
 			packageProductDependencies = (
-				57E30EFD2D120BFD00254FD5 /* Realm */,
 				57E30EFF2D120BFD00254FD5 /* RealmSwift */,
 			);
 			productName = DailyPlanner;
@@ -374,11 +371,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		57E30EFD2D120BFD00254FD5 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 57E30EFC2D120BFD00254FD5 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
 		57E30EFF2D120BFD00254FD5 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 57E30EFC2D120BFD00254FD5 /* XCRemoteSwiftPackageReference "realm-swift" */;

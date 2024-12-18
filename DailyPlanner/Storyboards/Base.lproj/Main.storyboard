@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дек 2024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxX-wg-qlX">
-                                <rect key="frame" x="137.33333333333334" y="115.99999999999999" width="118.33333333333334" height="50.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <rect key="frame" x="142" y="115.99999999999999" width="109" height="50.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAz-ul-ChB" userLabel="Next month">
-                                <rect key="frame" x="255.66666666666663" y="113.66666666666669" width="137.33333333333337" height="55"/>
+                                <rect key="frame" x="251" y="113.66666666666669" width="142" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="&gt;"/>
@@ -85,7 +85,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TO0-hQ-Qi6">
-                                <rect key="frame" x="0.0" y="244.33333333333334" width="393" height="303.66666666666663"/>
+                                <rect key="frame" x="0.0" y="244.33333333333334" width="393" height="313.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="2" minimumInteritemSpacing="2" id="uB2-y4-AFg">
                                     <size key="itemSize" width="128" height="128"/>
@@ -102,8 +102,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qt-9Z-8EG">
-                                                    <rect key="frame" x="60.333333333333336" y="55" width="7.6666666666666643" height="18"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <rect key="frame" x="60.666666666666664" y="56.333333333333336" width="6.6666666666666643" height="15.666666666666664"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -124,21 +124,21 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hVk-Ix-DE2">
-                                <rect key="frame" x="0.0" y="563" width="393" height="255"/>
+                                <rect key="frame" x="0.0" y="573" width="393" height="245"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="calendarCell" id="uUx-b7-AhW">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="calendarCell" rowHeight="100" id="uUx-b7-AhW">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uUx-b7-AhW" id="Ent-2n-bqL">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J50-9H-6cs" userLabel="Next month">
-                                <rect key="frame" x="0.0" y="113.66666666666669" width="137.33333333333334" height="55"/>
+                                <rect key="frame" x="0.0" y="113.66666666666669" width="142" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="&lt;"/>
@@ -154,7 +154,7 @@
                             <constraint firstItem="HxX-wg-qlX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="4ir-al-geR"/>
                             <constraint firstItem="J50-9H-6cs" firstAttribute="centerY" secondItem="HxX-wg-qlX" secondAttribute="centerY" id="9OM-i3-3nq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oab-Vi-fHe" secondAttribute="trailing" id="Pqs-IN-VPu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TO0-hQ-Qi6" secondAttribute="bottom" constant="270" id="Ql7-Gq-aRj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TO0-hQ-Qi6" secondAttribute="bottom" constant="260" id="Ql7-Gq-aRj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hVk-Ix-DE2" secondAttribute="bottom" id="SUN-Rz-I3c"/>
                             <constraint firstItem="oab-Vi-fHe" firstAttribute="top" secondItem="HxX-wg-qlX" secondAttribute="bottom" constant="20" id="T2L-ps-MRs"/>
                             <constraint firstItem="oab-Vi-fHe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WBR-my-9LC"/>
@@ -179,11 +179,12 @@
                     <connections>
                         <outlet property="collectionView" destination="TO0-hQ-Qi6" id="iNe-Nn-iol"/>
                         <outlet property="monthLabel" destination="HxX-wg-qlX" id="Uk6-Xv-t1e"/>
+                        <outlet property="tableView" destination="hVk-Ix-DE2" id="5gq-s2-W8S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1055.7251908396945" y="-27.464788732394368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qEc-67-9FB">
